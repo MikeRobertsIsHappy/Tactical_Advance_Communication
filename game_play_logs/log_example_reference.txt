@@ -1,0 +1,28 @@
+2022-03-12 07:08:38.811 INFO      * Running on http://127.0.0.1:8080/ (Press CTRL+C to quit)
+2022-03-12 07:08:46.737 INFO     127.0.0.1 - - [12/Mar/2022 07:08:46] "GET / HTTP/1.1" 200 -
+2022-03-12 07:08:46.897 INFO     127.0.0.1 - - [12/Mar/2022 07:08:46] "GET /static/style.css HTTP/1.1" 200 -
+2022-03-12 07:08:46.905 INFO     127.0.0.1 - - [12/Mar/2022 07:08:46] "GET /static/images/jackals.jpg HTTP/1.1" 200 -
+2022-03-12 07:08:46.932 INFO     127.0.0.1 - - [12/Mar/2022 07:08:46] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2022-03-12 07:08:52.143 INFO     127.0.0.1 - - [12/Mar/2022 07:08:52] "[32mPOST / HTTP/1.1[0m" 302 -
+2022-03-12 07:08:52.156 INFO     127.0.0.1 - - [12/Mar/2022 07:08:52] "GET /game HTTP/1.1" 200 -
+2022-03-12 07:08:52.178 INFO     127.0.0.1 - - [12/Mar/2022 07:08:52] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2022-03-12 07:08:52.179 INFO     127.0.0.1 - - [12/Mar/2022 07:08:52] "[36mGET /static/images/jackals.jpg HTTP/1.1[0m" 304 -
+2022-03-12 07:09:00.588 INFO     introduction:Start of session
+2022-03-12 07:09:00.588 INFO     session info:{'jackalbot_name': 'need_safety', 'jackalbot_created': '44544', 'jackalbot_updated': '44544', 'jackalbot_version': '1', 'jackalbot_author': 'Mike Roberts', 'jackalbot_hosts': ['', ''], 'intro_prompt': '  You scare me when you look at me like that. ', 'jackalbot_score_to_move_to_next_stage': 100, 'jackalbot_num_guess_then_offer_clue': 3, 'jackalbot_num_guess_max_then_move_on': 5}
+2022-03-12 07:09:00.589 INFO     user info:MIke
+2022-03-12 07:09:00.591 INFO     127.0.0.1 - - [12/Mar/2022 07:09:00] "GET /get?msg=start HTTP/1.1" 200 -
+2022-03-12 07:09:27.128 INFO     user_input: That is awfully stupid
+2022-03-12 07:09:27.181 INFO     user_input_response_scores: {'did_it_sound_like_nvc': (0.78886, 0.21114)}, {'input_polarity': -0.7999999999999999}, {'input_subjectivity': 1.0}, {'input_response_score': 0}, {'input_response_score': 0}
+2022-03-12 07:09:27.197 INFO     cleaned_user_input: ['awfully', 'stupid']
+2022-03-12 07:09:27.197 INFO     cleaned_user_input_response_scores: {'did_it_sound_like_nvc', (0.78886, 0.21114)}, {-0.7999999999999999, 'input_polarity'}, {1.0, 'input_subjectivity'}, {0, 'input_response_score'}
+2022-03-12 07:09:27.197 INFO     127.0.0.1 - - [12/Mar/2022 07:09:27] "GET /get?msg=That%20is%20awfully%20stupid HTTP/1.1" 200 -
+2022-03-12 07:09:45.903 INFO     user_input: that is great that you need freedom
+2022-03-12 07:09:45.916 INFO     user_input_response_scores: {'did_it_sound_like_nvc': (0.78886, 0.21114)}, {'input_polarity': 0.8}, {'input_subjectivity': 0.75}, {'input_response_score': 0}, {'input_response_score': 0}
+2022-03-12 07:09:45.920 INFO     cleaned_user_input: ['great', 'need', 'freedom']
+2022-03-12 07:09:45.920 INFO     cleaned_user_input_response_scores: {'did_it_sound_like_nvc', (0.58119, 0.41881)}, {'input_polarity', 0.8}, {0.75, 'input_subjectivity'}, {0, 'input_response_score'}
+2022-03-12 07:09:45.920 INFO     127.0.0.1 - - [12/Mar/2022 07:09:45] "GET /get?msg=that%20is%20great%20that%20you%20need%20freedom HTTP/1.1" 200 -
+2022-03-12 07:10:01.521 INFO     user_input: could you be needing safety
+2022-03-12 07:10:01.534 INFO     user_input_response_scores: {'did_it_sound_like_nvc': (0.78886, 0.21114)}, {'input_polarity': 0.0}, {'input_subjectivity': 0.0}, {'input_response_score': 100}, {'input_response_score': 100}
+2022-03-12 07:10:01.534 INFO     cleaned_user_input: ['could', 'needing', 'safety']
+2022-03-12 07:10:01.534 INFO     cleaned_user_input_response_scores: {'did_it_sound_like_nvc', (0.78886, 0.21114)}, {0.0, 'input_polarity'}, {0.0, 'input_subjectivity'}, {'input_response_score', 100}
+2022-03-12 07:10:01.534 INFO     127.0.0.1 - - [12/Mar/2022 07:10:01] "GET /get?msg=could%20you%20be%20needing%20safety HTTP/1.1" 200 -

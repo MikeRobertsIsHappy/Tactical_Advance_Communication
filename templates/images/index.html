@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <div><img src="/static/jaquelbot.jpg" alt="jaquelbot image" style="width:100px;height:65px;">Jaquelbot
+    <div>----------------------------------------------------------------------------------------------------------------------------
+    <div>
+      <div id="chatbox">
+        <p class="botText"style="text-align:center"><span>We are Jacqueline and Jacques, your Non-Violent Communication (NVC) training partners.<br><br>
+          For each training session, one of us will pretend to be persona with an emotional problem. There are several personas. Each persona will have a different set of feelings and needs. You will try to communicate to the persona in a way that uses NVC tools.  Click <a href="/static/JaquelbotOverview.html">here for detailed system overview. </a><br>Each practice session with the persona will take about 5 minutes to move through the required steps: (1) inquire about persona, (2) guess the correct feeling, (3)guess the correct need,(4) help find a strategy. <br><br>
+            <br><br>  
+            When you are ready to begin, type "start"  </span></p>       
+      </div>
+      <div id="userInput">
+        <input id="textInput" type="text" name="msg" placeholder="You: type here">
+        <input id="buttonInput" type="submit" value="Send">
+      </div>
+      <script>
+        function getBotResponse() {
+          var rawText = $("#textInput").val();
+          var userHtml = '<p class="userText"><span>' + rawText + '</span></p>';
+          $("#textInput").val("");
+          $("#chatbox").append(userHtml);
+          document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
+          $.get("/get", { msg: rawText }).done(function(data) {
+            var botHtml = '<p class="botText"><span>' + data + '</span></p>';
+            $("#chatbox").append(botHtml);
+            document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
+          });
+        }
+        $("#textInput").keypress(function(e) {
+            if ((e.which == 13) && document.getElementById("textInput").value != "" ){
+                getBotResponse();
+            }
+        });
+        $("#buttonInput").click(function() {
+            if (document.getElementById("textInput").value != "") {
+                getBotResponse();
+            }
+        })
+      </script>
+    </div>
+  </body>
+</html>

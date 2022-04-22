@@ -1,0 +1,53 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Game Index</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="/static/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+<body>
+    <div><img src="/static/images/jackals.jpg" alt="jaquelbot image" style="width:40px;height:25px;">
+    <div>  &nbsp;&nbsp;&nbsp;<b>The Needs Game</b>
+    <div>
+      <div id="chatbox">
+        <p class="botText"style="text-align:center"><span>The Needs Game is a tool to help you practice the skill of identifying a person's needs. </a><br><br> You will be given a phrase, then you will guess the correct need. <b>Some helpful hints:</b><br>  (1) Only guess one need at a time.<br> (2) Typing 'start' starts you at the very beginning of ALL the questions. <br> (3) Typing  'next' moves you forward to where you can begin the next question. <br>(4) Typing  'clue' gives you a clue for the answer for that question. <br>  (5) Typing  'needs' gives a list of ALL the possible needs. <b><br><br><p id="left"> </span></p>
+        <p class="botText"style="text-align:left" style="color:red"><b> When you are ready, type "start" </b></p>
+      </div>
+      <div id="userInput">
+        &nbsp; <input id="textInput" type="text" size="30" name="msg" placeholder="You: type here">
+        <input id="buttonInput" type="submit" value="Send">
+      </div>
+      <script>
+        function getBotResponse() {
+          var rawText = $("#textInput").val();
+          var userHtml = '<p class="userText"><span>' + rawText + '</span></p>';
+          $("#textInput").val("");
+          $("#chatbox").append(userHtml);
+          document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
+          $.get("/get", { msg: rawText }).done(function(data) {
+            var botHtml = '<p class="botText"><span>' + data + '</span></p>';
+            $("#chatbox").append(botHtml);
+            document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
+          });
+        }
+        $("#textInput").keypress(function(e) {
+            if ((e.which == 13) && document.getElementById("textInput").value != "" ){
+                getBotResponse();
+            }
+        });
+        $("#buttonInput").click(function() {
+            if (document.getElementById("textInput").value != "") {
+                getBotResponse();
+            }
+        })
+      </script>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+
+Features
+
+what to change in personas
+
+update clue
+update needs list
+
+
+
+limit log size /quality so we don't blow up the  system when we run out of hardirive space
+
+Figure out how to do Feeling game in the same app 
+
+wire up the nvc evaluation model line 78-85  the varribles are enot logged
+
+
+
