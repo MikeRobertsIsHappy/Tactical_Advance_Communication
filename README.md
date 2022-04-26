@@ -40,6 +40,7 @@ from the cloud terminal
    If delpoying to team location, the application might be disbaled to reduce billing costs.
    If the application has been diabled, you can enable the appilcation here https://console.cloud.google.com/appengine/settings?cloudshell=false&project=the-needs-game
 
+```
    git clone https://github.com/MikeRobertsIsHappy/NeedsGameApp.git
    
    gcloud init   # (optional if you want to change settings)
@@ -51,9 +52,5 @@ from the cloud terminal
        cloud app logs tail -s default    # (optional)  will stream the logs to the terminal. Useful for debugging
    ```
 3. Your application is now live 
-   
-## Should look like this
-
-![image8](https://user-images.githubusercontent.com/24612642/154763236-6d3efec4-cc12-4bf7-8063-6f38216b11bd.png)
 
 To see an example terminal text. please view the file README_gcloud.md in this repository.
