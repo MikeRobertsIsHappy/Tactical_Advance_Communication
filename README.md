@@ -10,12 +10,13 @@ See 'admin_documents' folder for general information about the project. The Micr
 1. Clone this repo.
 
    ```
-   git clone https://github.com/MikeRobertsIsHappy/jacquelbot_cloud
+   git clone https://github.com/MikeRobertsIsHappy/Tactical_Advance_Communication.git
    ```
 
 2. Open a sample folder, create a virtualenv, install dependencies, and run the sample:
 
    -----PC based instructions -------
+   ```
    cd <to the directroy>
    virtualenv env  # for first time
    env\Scripts\activate.ps1  # to start the virtual environment for Windows(env\Scripts\activate.sh for others)) 
