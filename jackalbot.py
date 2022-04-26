@@ -1,7 +1,7 @@
 import logging
 from textblob import TextBlob
 import twily_classifier as cl
-#import stop_words as stopwords
+#import stop_words as stopwords  # will use later, current manual defiention of stope words in json personas
 import json
 from pathlib import Path
 import os.path
