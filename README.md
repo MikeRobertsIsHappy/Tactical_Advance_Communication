@@ -41,7 +41,7 @@ from the cloud terminal
    If the application has been diabled, you can enable the appilcation here https://console.cloud.google.com/appengine/settings?cloudshell=false&project=the-needs-game
 
 ```
-   git clone https://github.com/MikeRobertsIsHappy/NeedsGameApp.git
+   git clone https://github.com/MikeRobertsIsHappy/Tactical_Advance_Communication.git
    
    gcloud init   # (optional if you want to change settings)
    
