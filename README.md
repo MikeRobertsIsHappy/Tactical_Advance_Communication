@@ -41,6 +41,7 @@ from the cloud terminal
    If the application has been diabled, you can enable the appilcation here https://console.cloud.google.com/appengine/settings?cloudshell=false&project=the-needs-game
 
    git clone https://github.com/MikeRobertsIsHappy/NeedsGameApp.git
+   
    gcloud init   # (optional if you want to change settings)
    
    cd NeedsGameApp   #to the directory with the source code
