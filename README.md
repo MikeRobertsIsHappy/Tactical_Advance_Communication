@@ -46,7 +46,7 @@ from the cloud terminal
    
    gcloud init   # (optional if you want to change settings)
    
-   cd NeedsGameApp   #to the directory with the source code
+   cd Tactical_Advance_Communication/   #to the directory with the source code
 
    gcloud app deploy  # to deploy, may take several minutes
 
