@@ -232,6 +232,10 @@ def read_game_state_dictionary_into_varribles (game_state_dictionary):
     bot_host = game_state_dictionary['bot_host']
     persona_data   = game_state_dictionary['persona_data']    
     total_score_dictionary = game_state_dictionary['total_score_dictionary']
+
+    #with open('example_cookie.txt', 'w') as example_cookie:  example_cookie.write(json.dumps(game_state_dictionary))  # save session cookie to file for reference
+
+
     return personas_in_directory_list,	current_persona_number, conversation_phase, past_show_scores, bot_host, persona_data, total_score_dictionary 
 
 def save_score_to_file(data_to_save, path_to_log):
@@ -377,5 +381,6 @@ def jackalbot_response (user_input, session_data):
 
         #save game state
         session_data['game_state_data'] = create_game_state_dictionary (personas_in_directory_list, current_persona_number, conversation_phase, past_show_scores, bot_host,  persona_data, game_state_dictionary, total_score_dictionary)
-
+        #with open('example_cookie_start.txt', 'w') as example_cookie_start:  example_cookie_start.write(json.dumps(session_data))  # save session cookie to file for reference
+    
         return bot_response, session_data['game_state_data']
