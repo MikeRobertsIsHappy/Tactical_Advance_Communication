@@ -2,29 +2,8 @@ body {
     font-family: Arial, sans-serif;
 }
 
-/* unvisited link */
-a:link {
-    color: rgb(243, 221, 53);
-  }
-  
-  /* visited link */
-  a:visited {
-    color: white;
-  }
-  
-  /* mouse over link */
-  a:hover {
-    color: hotpink;
-  }
-  
-  /* selected link */
-  a:active {
-    color: white;
-  }
-
-
 h1 {
-    color: white;
+    color: black;
     margin-bottom: 0;
     margin-top: 0;
     text-align: center;
@@ -32,7 +11,7 @@ h1 {
 }
 
 h2 {
-    color: white;
+    color: black;
     font-size: 20px;
     margin-top: 3px;
     text-align: center;
@@ -40,7 +19,7 @@ h2 {
 
 
 h3 {
-    color: white;
+    color: black;
     font-size: 20px;
     margin-top: 3px;
     text-align: center;
@@ -86,59 +65,9 @@ h3 {
 }
 
 .userText span {
-    background-color: #7bf2c2;
+    background-color: #a6f5d4;
     padding: 5px;
     border-radius: 1px;
-}
-
-.EasyModeText {
-    color: black;
-    font-family: Arial, sans-serif;
-    font-size: 14px;
-    text-align: left;
-    line-height: 16px;
-    background-color: #d6ce35;
-    padding: 3px;
-}
-
-.EasyModeText span {
-    padding: 5px;
-    border-radius: 1px;
-}
-
-.moreInfoText {
-    color: white;
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    text-align: center;
-    line-height: 25px;
-
-}
-
-.smallInfoText {
-    color: white;
-    font-family: Arial, sans-serif;
-    font-size: 12px;
-    text-align: left;
-    line-height: 15px;
-
-}
-
-.smallInfoButtonText {
-    color: black;
-    font-family: Arial, sans-serif;
-    font-size: 12px;
-    text-align: left;
-    line-height: 15px;
-
-}
-
-.introText {
-    color: white;
-    font-family: Arial, sans-serif;
-    font-size: 18px;
-    text-align: right;
-    line-height: 25px;
 }
 
 .botText {
@@ -150,7 +79,7 @@ h3 {
 }
 
 .botText span {
-    background-color: #f6cbcb;
+    background-color: #f8eec2;
     padding: 5px;
     border-radius: 1px;
 }

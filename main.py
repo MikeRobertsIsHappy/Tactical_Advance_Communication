@@ -10,7 +10,7 @@ import os.path
 
 app = Flask(__name__)
 app.secret_key = "hello"
-app.permanent_session_lifetime = timedelta(minutes=5)
+app.permanent_session_lifetime = timedelta(minutes=15)
 
 # first step is to get the users name.  This initiates the session
 @app.route("/", methods=["POST", "GET"])
@@ -50,6 +50,16 @@ def get_bot_response():
     bot_response, new_game_state_data  = jb.jackalbot_response(user_input, session)
     session['game_state_data'] = new_game_state_data
     return bot_response
+
+@app.route("/moreinfo", methods=["POST"])
+def moreinfo():
+	if request.method == "POST":
+		if "user" in session:
+			return redirect(url_for("game"))
+		return render_template("login.html")
+	else:
+		return render_template("moreinfo.html")
+
 
 @app.route("/logout")
 def logout():
