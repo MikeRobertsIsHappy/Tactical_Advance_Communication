@@ -50,7 +50,21 @@ h3 {
     max-width: 750px;
     margin-top: 30px;
     text-align: left;
+    background-color: rgba(43,64,95,1);
 }
+
+#easymodebox {
+    max-width: 750px;
+    margin-top: 2px;
+}
+
+#logoposition {
+	position: absolute;
+	left: 5px;
+	top: 5px;
+	overflow: visible;
+}
+
 
 #userInput {
     margin-left: auto;
@@ -98,6 +112,7 @@ h3 {
     text-align: left;
     line-height: 16px;
     background-color: #d6ce35;
+    max-width: 750px;
     padding: 3px;
 }
 
@@ -121,7 +136,7 @@ h3 {
     font-size: 12px;
     text-align: left;
     line-height: 15px;
-
+    background-color: rgba(73,85,105,1);
 }
 
 .smallInfoButtonText {
@@ -137,8 +152,12 @@ h3 {
     color: white;
     font-family: Arial, sans-serif;
     font-size: 18px;
-    text-align: right;
+    text-align: left;
     line-height: 25px;
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    overflow: visible;
 }
 
 .botText {

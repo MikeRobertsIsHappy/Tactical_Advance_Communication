@@ -20,7 +20,9 @@ See 'admin_documents' folder for general information about the project. The Micr
    cd <to the directroy>
    virtualenv env  # for first time
    env\Scripts\activate.ps1  # to start the virtual environment for Windows(env\Scripts\activate.sh for others)) 
+     for MAC  source env/bin/activate
    python.exe -m pip install --upgrade pip     #to upgrade pip
+     for MAC  python -m pip install --upgrade pip
    pip install -r requirements.txt   OR    pip install --no-cache-dir -r requirements.txt    # for first time
    python main.py
    http://127.0.0.1:8080/
