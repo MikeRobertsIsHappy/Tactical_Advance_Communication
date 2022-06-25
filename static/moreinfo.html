@@ -11,60 +11,151 @@
   <link rel="stylesheet" type="text/css" href="/static/style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <script>
-	$(document).ready(function(){
-		$('#purpose').on('change', function() {
-		if ( this.value == '1')
-		{
-			$("#business").show();
-		}
-		else
-		{
-			$("#business").hide();
-		}
-		});
-	});
-	</script>
-  <style>
-	a:link, a:visited {
-	  background-color: #1d94f6;
-	  color: black;
-	  padding: 1px 5px;
-	  text-align: center;
-	  text-decoration: none;
-	  display: inline-block;
-	}
-	
-	a:hover, a:active {
-	  background-color: rgb(106, 122, 189);
-	}
+
+    <style>
+        ul {
+          list-style: none; /* Remove default bullets */
+        }
+
+        ul li::before {
+          content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+          color: white; /* Change the color */
+          font-weight: bold; /* If you want it to be bold */
+          display: inline-block; /* Needed to add space between the bullet and the text */
+          width: 1em; /* Also needed for space (tweak if needed) */
+          margin-left: -1em; /* Also needed for space (tweak if needed) */
+        }
+
 	</style>
   </head>
+
 <body  style="background-color:rgba(43,64,95,1);">
   <!-- <div><img src="/static/images/jackals.jpg" alt="jaquelbot image" style="width:40px;height:25px;">   -->
-    <div>
-      <div id="chatbox">
-        <p class="introText" style="text-align:left"><b>&nbsp;&nbspTAC Practice </b><br>
-		<div>
-			<p class="smallInfoButtonText"><span> &nbsp; &nbsp;<a href="/static/tachowto.html"> TAC HOW TO</a>&nbsp; &nbsp; &nbsp;  &nbsp;<a href="/static/moreinfo.html"> More Info </a>&nbsp; &nbsp; &nbsp;  &nbsp;
-				<select id='purpose' style="background: #1d94f6;">
-					<option value="0" style="background-color: #1d94f6;">Easy Mode OFF</option>
-					<option value="1" style="background-color: #1d94f6;">Easy Mode ON</option>
-				</select>
-			</span></p>
-		</div>
-          <p class="moreInfoText" style="text-align:left"><b> &nbsp;More Info</b></p>
-		  <p class="smallInfoText" style="text-align:left"> &nbsp; &nbsp;You will do blah blah blahblah blaaaah bllaha blahahaha blaaaaa moreInfo  ∫TextmoreInfo blahahaha blaaaaa  TextmoreInfoblahahaha blaaaaa   Textmore blahahaha blaaaaa InfoText do blah blah blahblah blaaaah   &nbsp;You will do blah blah blahblah blaaaah bllaha blahahaha blaaaaa moreInfo  ∫TextmoreInfo blahahaha blaaaaa  TextmoreInfoblahahaha blaaaaa   Textmore blahahaha blaaaaa InfoText do blah blah blahblah blaaaah &nbsp;You will do blah blah blahblah blaaaah bllaha blahahaha blaaaaa moreInfo  ∫TextmoreInfo blahahaha blaaaaa  TextmoreInfoblahahaha blaaaaa   Textmore blahahaha blaaaaa InfoText do blah blah blahblah blaaaah &nbsp;You will do blah blah blahblah blaaaah bllaha blahahaha blaaaaa moreInfo  ∫TextmoreInfo blahahaha blaaaaa  TextmoreInfoblahahaha blaaaaa   Textmore blahahaha blaaaaa InfoText do blah blah blahblah blaaaah &nbsp;You will do blah blah blahblah blaaaah bllaha blahahaha blaaaaa moreInfo  ∫TextmoreInfo blahahaha blaaaaa  TextmoreInfoblahahaha blaaaaa   Textmore blahahaha blaaaaa InfoText do blah blah blahblah blaaaah &nbsp;You will do blah blah blahblah blaaaah bllaha blahahaha blaaaaa moreInfo  ∫TextmoreInfo blahahaha blaaaaa  TextmoreInfoblahahaha blaaaaa   Textmore blahahaha blaaaaa InfoText do blah blah blahblah blaaaah &nbsp;You will do blah blah blahblah blaaaah bllaha blahahaha blaaaaa moreInfo  ∫TextmoreInfo blahahaha blaaaaa  TextmoreInfoblahahaha blaaaaa   Textmore blahahaha blaaaaa InfoText do blah blah blahblah blaaaah &nbsp;You will do blah blah blahblah blaaaah bllaha blahahaha blaaaaa moreInfo  ∫TextmoreInfo blahahaha blaaaaa  TextmoreInfoblahahaha blaaaaa   Textmore blahahaha blaaaaa InfoText do blah blah blahblah blaaaah &nbsp;You will do blah blah blahblah blaaaah bllaha blahahaha blaaaaa moreInfo  ∫TextmoreInfo blahahaha blaaaaa  TextmoreInfoblahahaha blaaaaa   Textmore blahahaha blaaaaa InfoText do blah blah blahblah blaaaah &nbsp;You will do blah blah blahblah blaaaah bllaha blahahaha blaaaaa moreInfo  ∫TextmoreInfo blahahaha blaaaaa  TextmoreInfoblahahaha blaaaaa   Textmore blahahaha blaaaaa InfoText do blah blah blahblah baaaah <br>  </p>
+    <div id="chatbox">
+        <p class="introText"><b>TAC Practice </b><br>
+        <p><span style="color:#ffffff"><span style="font-size:12pt"><span style="font-family:Calibri,sans-serif"><strong><span style="font-size:12.0pt">More Info </span></strong><span style="font-size:12.0pt"> <strong>Tactical Advance Communication</strong></span></span></span></span><br />
+            &nbsp;</p>
 
-          <p class="moreInfoText" style="text-align:left"><b> &nbsp;Alot More Info </b></p>
-          <p class="smallInfoText" style="text-align:left"> &nbsp; &nbsp;You will do blah blah blahblah blaaaah bllaha blahahaha blaaaaa moreInfo  ∫TextmoreInfo blahahaha blaaaaa  TextmoreInfoblahahaha blaaaaa   Textmore blahahaha blaaaaa InfoText do blah blah blahblah blaaaah   &nbsp;You will do blah blah blahblah blaaaah bllaha blahahaha blaaaaa moreInfo  ∫TextmoreInfo blahahaha blaaaaa  TextmoreInfoblahahaha blaaaaa   Textmore blahahaha blaaaaa InfoText do blah blah blahblah blaaaah &nbsp;You will do blah blah blahblah blaaaah bllaha blahahaha blaaaaa moreInfo  ∫TextmoreInfo blahahaha blaaaaa  TextmoreInfoblahahaha blaaaaa   Textmore blahahaha blaaaaa InfoText do blah blah blahblah blaaaah &nbsp;You will do blah blah blahblah blaaaah bllaha blahahaha blaaaaa moreInfo  ∫TextmoreInfo blahahaha blaaaaa  TextmoreInfoblahahaha blaaaaa   Textmore blahahaha blaaaaa InfoText do blah blah blahblah blaaaah &nbsp;You will do blah blah blahblah blaaaah bllaha blahahaha blaaaaa moreInfo  ∫TextmoreInfo blahahaha blaaaaa  TextmoreInfoblahahaha blaaaaa   Textmore blahahaha blaaaaa InfoText do blah blah blahblah blaaaah &nbsp;You will do blah blah blahblah blaaaah bllaha blahahaha blaaaaa moreInfo  ∫TextmoreInfo blahahaha blaaaaa  TextmoreInfoblahahaha blaaaaa   Textmore blahahaha blaaaaa InfoText do blah blah blahblah blaaaah &nbsp;You will do blah blah blahblah blaaaah bllaha blahahaha blaaaaa moreInfo  ∫TextmoreInfo blahahaha blaaaaa  TextmoreInfoblahahaha blaaaaa   Textmore blahahaha blaaaaa InfoText do blah blah blahblah blaaaah &nbsp;You will do blah blah blahblah blaaaah bllaha blahahaha blaaaaa moreInfo  ∫TextmoreInfo blahahaha blaaaaa  TextmoreInfoblahahaha blaaaaa   Textmore blahahaha blaaaaa InfoText do blah blah blahblah blaaaah &nbsp;You will do blah blah blahblah blaaaah bllaha blahahaha blaaaaa moreInfo  ∫TextmoreInfo blahahaha blaaaaa  TextmoreInfoblahahaha blaaaaa   Textmore blahahaha blaaaaa InfoText do blah blah blahblah blaaaah &nbsp;You will do blah blah blahblah blaaaah bllaha blahahaha blaaaaa moreInfo  ∫TextmoreInfo blahahaha blaaaaa  TextmoreInfoblahahaha blaaaaa   Textmore blahahaha blaaaaa InfoText do blah blah blahblah blaaaah <br>  </p>
-      </div>
+        <p><span style="color:#ffffff"><span style="font-size:18px"><span style="font-family:Calibri,sans-serif"><strong>What is Tactical Advance Communication?</strong></span></span></span></p>
 
-      <div  class="easymodebox">
-          <div class="EasyModeText" style='display:none;' id='business'>
-            Easy Mode Suggestions: Security, Empathy, Support, Stability, Safety, Consideration, Respect, Understanding, Compassion, Freedom, Movement, Choice, Order, Shelter, Care, Peace. <br><b> Only guess one need at a time.</b><br>
-          </div>
-      </div>
+        <p><span style="color:#ffffff"><span style="font-size:12pt"><span style="font-family:Calibri,sans-serif">TAC is the next generation of communication tool for first responders. Historically, first responders have developed strategies for talking to emotionally distressed citizens).&nbsp; Early communication strategies such as &ldquo;verbal judo:&nbsp; or &ldquo;ask, tell, make&rdquo;, or &ldquo;feel, felt, found&rdquo; are more effective than not having a strategy at all.&nbsp; TAC improves on these earlier communication strategies to provide better tools for communicating to distressed citizens, which will make for safer environments for everyone. &nbsp;&nbsp;This game is will train some of the verbal skills needed in the streets.</span></span></span></p>
+
+        <p><span style="color:#ffffff"><span style="font-size:12pt"><span style="font-family:Calibri,sans-serif">TAC is offered in appreciation of the heroes that risk their lives to help make our world a safer place. </span></span></span></p>
+
+        <p>&nbsp;</p>
+
+        <p><span style="color:#ffffff"><span style="font-size:18px"><span style="font-family:Calibri,sans-serif"><strong>Why does it works?</strong></span></span></span></p>
+
+        <p><span style="color:#ffffff"><span style="font-size:12pt"><span style="font-family:Calibri,sans-serif"><strong>Part A:&nbsp; </strong>&nbsp;</span></span><span style="font-size:12pt"><span style="font-family:Calibri,sans-serif">When the general public interacts with first responders there is usually a power imbalance between the first responder a distressed citizen.&nbsp; For example, the citizen might be need help in a situation, or might be afraid of being arrested from the police officer. In a situation where there is a power imbalance, the weaker person is usually afraid that they will not be listened to and respected by the more powerful person.&nbsp;&nbsp; So, the question becomes, how can a first responder convey to the distressed citizen that they are being listened to and respected?</span></span></span></p>
+
+        <p>&nbsp;</p>
+
+        <p><span style="color:#ffffff"><span style="font-size:12pt"><span style="font-family:Calibri,sans-serif"><strong>Part B:</strong>&nbsp; </span></span><span style="font-size:12pt"><span style="font-family:Calibri,sans-serif">We start with the assumptions that A.) all people have the same kinds of needs. Such as a need for respect, safety, peace, empathy, freedom, ....&nbsp; B.) People do things to meet their needs. Everything a person does is to meet some need.&nbsp;&nbsp;&nbsp; When you talk to a person about their needs, they usually feel listened to because you are talking to them about what is important to them at the that moment.&nbsp; &nbsp;</span></span></span></p>
+
+        <p>&nbsp;</p>
+
+        <p><span style="color:#ffffff"><span style="font-size:12pt"><span style="font-family:Calibri,sans-serif"><strong>Part A + Part B = A real-world strategy.</strong>&nbsp;</span></span><span style="font-size:12pt"><span style="font-family:Calibri,sans-serif">TAC works because it gives first responders a tool to help them address the power imbalance while creating a connection to the citizen&rsquo;s needs. &nbsp;&nbsp;This approach has been tested in real-life encounters in the streets by police officers with great success.&nbsp; This strategy is more effective in deescalating situations than other communication strategies because it gets to the core issues of the situation quickly and without blame.</span></span></span></p>
+
+        <p>&nbsp;</p>
+
+        <p>&nbsp;</p>
+
+        <p><span style="color:#ffffff"><span style="font-size:18px"><span style="font-family:Calibri,sans-serif"><strong>How to do TAC in the streets?</strong></span></span></span></p>
+
+        <p><span style="color:#ffffff"><span style="font-size:12pt"><span style="font-family:Calibri,sans-serif">1.) Start with a list of needs.</span></span></span></p>
+
+        <p><span style="color:#ffffff"><span style="font-size:12pt"><span style="font-family:Calibri,sans-serif">While we recognize that people have many needs, this list should handle most of the situations for a first responder.&nbsp; Think of these needs words as bullets for your &ldquo;communication gun.&rdquo;</span></span></span></p>
+
+        <p style="margin-left:48px"><span style="color:#ffffff"><span style="font-size:12pt"><span style="font-family:Calibri,sans-serif">security, empathy, support, stability, safety, consideration, respect, understanding, shared reality, compassion, food/water, freedom, movement, choice, order, shelter, care, peace.&nbsp; </span></span></span></p>
+
+        <p>&nbsp;</p>
+
+        <p><span style="color:#ffffff"><span style="font-size:12pt"><span style="font-family:Calibri,sans-serif">2.) Try to make a needs-based connection</span></span></span></p>
+
+        <p><span style="color:#ffffff"><span style="font-size:12pt"><span style="font-family:Calibri,sans-serif">When talking to an emotionally elevated person at the scene ask about what they are needing using one of the words above.&nbsp; For example, &ldquo;Hey buddy, it looks like you are not getting the respect and safety that you want here?&rdquo;</span></span></span></p>
+
+        <p>&nbsp;</p>
+
+        <p><span style="color:#ffffff"><span style="font-size:12pt"><span style="font-family:Calibri,sans-serif">3.) Keep the conversation following up on their needs until the distressed citizen calms down.&nbsp; </span></span></span></p>
+
+        <p><span style="color:#ffffff"><span style="font-size:12pt"><span style="font-family:Calibri,sans-serif">It is very tempting after an initial connection with a distressed citizen to quickly try to suggest a solution. (For example, the policeman might suggest, &ldquo;We can take you to the hospital?&rdquo; ) &nbsp;Distressing situations are uncomfortable, so most people are inclined to rush to fix things.&nbsp; Instead of rushing to solutions, spending another few minutes to explore the needs will create a deeper connection in most situations. </span></span></span></p>
+
+        <p>&nbsp;</p>
+
+        <p><span style="color:#ffffff"><span style="font-size:18px"><strong><span style="font-family:Calibri,sans-serif">Real world advice</span></strong></span></span></p>
+
+        <ul>
+            <li><span style="color:#ffffff"><span style="font-size:12pt"><span style="font-family:Calibri,sans-serif">TAC is unnatural to you.&nbsp;&nbsp; It will feel strange to communicate with TAC at first.&nbsp; Our DNA programs us for fight or flight in stressful situations, which is not useful for many stressful situations.&nbsp; Just like practicing good habits for gun battles, the first responder will need to train to be able to use these communication tools under stressful environments.</span></span></span></li>
+            <li><span style="color:#ffffff"><span style="font-size:12pt"><span style="font-family:Calibri,sans-serif">People may not hear you the first time. Due to either previous experience with first responders or within their own families, people may not expect a person to ask about their needs.</span></span></span></li>
+            <li><span style="color:#ffffff"><span style="font-size:12pt"><span style="font-family:Calibri,sans-serif">This works for people who are under the influence of drugs or alcohol. Typically, people under the influence will be forgetful and you might need to go through the same conversation several times.</span></span></span></li>
+            <li><span style="color:#ffffff"><span style="font-size:12pt"><span style="font-family:Calibri,sans-serif">Nothing works ALL the time. Distressed citizens that are unable to discuss their needs may require the use of physical techniques comply with the law.</span></span></span></li>
+            <li><span style="color:#ffffff"><span style="font-size:12pt"><span style="font-family:Calibri,sans-serif">Be careful when the citizen responds to your question with, &ldquo;What!?&rdquo;.&nbsp;&nbsp; In most cases they have heard you correctly, but are stalling to figure out what they are going to do.</span></span></span></li>
+        </ul>
+
+        <p>&nbsp;</p>
+
+        <p><span style="color:#ffffff"><span style="font-size:18px"><span style="font-family:Calibri,sans-serif"><strong>Advanced topics and more info</strong></span></span></span></p>
+
+        <p><span style="color:#ffffff"><span style="font-size:12pt"><span style="font-family:Calibri,sans-serif">Fake feelings and Needs &ndash; As mentioned above, TAC assumes all people have the same list of needs.&nbsp; A need is defined as something that does not require another <strong>specific</strong> person/thing to fulfill it.&nbsp;&nbsp; There is a fundamental belief that there are many different strategies possible to meet a need. </span></span></span></p>
+
+        <p><span style="color:#ffffff"><span style="font-size:12pt"><span style="font-family:Calibri,sans-serif"><em>&nbsp;&nbsp; An easy example is, </em></span></span></span></p>
+
+        <ul>
+            <li><span style="color:#ffffff"><span style="font-size:12pt"><span style="font-family:Calibri,sans-serif">I have a need for food. (Correct, not specific, many foods can meet the need)</span></span></span></li>
+            <li><span style="color:#ffffff"><span style="font-size:12pt"><span style="font-family:Calibri,sans-serif">I have a need for chocolate (Incorrect, it is specific to chocolate)</span></span></span></li>
+        </ul>
+
+        <p><span style="color:#ffffff"><span style="font-size:12pt"><span style="font-family:Calibri,sans-serif"><em>&nbsp; Harder examples:</em></span></span></span></p>
+
+        <ul>
+            <li><span style="color:#ffffff"><span style="font-size:12pt"><span style="font-family:Calibri,sans-serif">I have a need love. Correct, not specific)</span></span></span></li>
+            <li><span style="color:#ffffff"><span style="font-size:12pt"><span style="font-family:Calibri,sans-serif">I need love from Joe Smith. (Incorrect, it is specific to Joe.)</span></span></span></li>
+        </ul>
+
+        <p><span style="color:#ffffff"><span style="font-size:12pt"><span style="font-family:Calibri,sans-serif"><em>&nbsp; &nbsp;or</em></span></span></span></p>
+
+        <ul>
+            <li><span style="color:#ffffff"><span style="font-size:12pt"><span style="font-family:Calibri,sans-serif">I need respect (Correct)</span></span></span></li>
+            <li><span style="color:#ffffff"><span style="font-size:12pt"><span style="font-family:Calibri,sans-serif">I need Joe Smith to show me some respect (incorrect). </span></span></span></li>
+        </ul>
+
+        <p>&nbsp;</p>
+
+        <p><span style="color:#ffffff"><span style="font-size:12pt"><span style="font-family:Calibri,sans-serif">The same is true for feelings.&nbsp; TAC defined feels as an emotion that does not imply that another person has done something wrong. For example:</span></span></span></p>
+
+        <ul>
+            <li style="margin-left: 48px;"><span style="color:#ffffff"><span style="font-size:12pt"><span style="font-family:Calibri,sans-serif">I feel sad. (Correct, this is simply a feeling)</span></span></span></li>
+            <li style="margin-left: 48px;"><span style="color:#ffffff"><span style="font-size:12pt"><span style="font-family:Calibri,sans-serif">I feel disrespected (Incorrect since it implies someone else disrespected her)</span></span></span></li>
+            <li style="margin-left: 48px;"><span style="color:#ffffff"><span style="font-size:12pt"><span style="font-family:Calibri,sans-serif">I feel lonely (Correct)</span></span></span></li>
+            <li style="margin-left: 48px;"><span style="color:#ffffff"><span style="font-size:12pt"><span style="font-family:Calibri,sans-serif">I feel abandoned or rejected (Incorrect since it implies someone else disrespected her)</span></span></span></li>
+        </ul>
+
+        <p>&nbsp;</p>
+
+        <p><span style="color:#ffffff"><span style="font-size:18px"><strong><span style="font-family:Calibri,sans-serif">What we don&rsquo;t do and why we don&rsquo;t do it.</span></strong></span></span></p>
+
+        <ul>
+            <li><span style="color:#ffffff"><span style="font-size:12pt"><span style="font-family:Calibri,sans-serif">We don&rsquo;t ask what people what they think. If we ask what people think we usually get a whole bunch of opinions about whose fault it is.</span></span></span></li>
+            <li><span style="color:#ffffff"><span style="font-size:12pt"><span style="font-family:Calibri,sans-serif">We don&rsquo;t spend much time asking about the distressed person&rsquo;s feelings. </span></span></span>
+                <ul style="list-style-type:circle">
+                    <li><span style="color:#ffffff"><span style="font-size:12pt"><span style="font-family:Calibri,sans-serif">The TAC approach believes that feelings are the result of our met/unmet needs. (If your need for food is not met, then you feel hungry.&nbsp; </span></span></span></li>
+                    <li><span style="color:#ffffff"><span style="font-size:12pt"><span style="font-family:Calibri,sans-serif">We may also avoid talking about feelings by reframing the emotion for the distress citizen. For example, if a distressed citizen is very angry, we might say, &ldquo;I can see that you are frustrated&rdquo;, rather than saying &ldquo;angry.&rdquo; We can acknowledge the emotion (connection) and try to reframe it with citizen (leading) to create a calmer situation where needs can be discussed.</span></span></span></li>
+                </ul>
+            </li>
+        </ul>
+
+        <p>&nbsp;</p>
+
+        <p><span style="color:#ffffff"><strong><span style="font-size:18px"><span style="font-family:Calibri,sans-serif">For more info go to:</span></span></strong></span></p>
+
+        <p><span style="color:#ffffff"><span style="font-size:12pt"><span style="font-family:Calibri,sans-serif">Tactical Advance Communication&rsquo;s website at www.tacticaladvance.com</span></span></span></p>
+
+
+        <p><span style="color:black"><span style="font-size:12pt"><span style="font-family:Calibri,sans-serif">&nbsp;&nbsp;<button onclick="history.back()">Go Back to Game</button></span></span></span></p>
+
+
+
+
 
     </div>
   </body>
