@@ -15,5 +15,5 @@
     "needs_general_bot_support_prompts" : "Hmmmm.  I do not think I understand what you are trying to say.  Try to guess the need?",
     "needs_list" : "Easy Mode Suggestions: Security,  Empathy,  Support,  Stability,  Safety,  Consideration,  Respect,  Understanding,  Shared reality,  Compassion,  Freedom,  Movement,  Choice,  Order,  Shelter,  Care,  Peace.   <br><b> Only guess one need at a time.</b><br>",
     "needs_if_fail_stage_next_prompt" : "Too many tries.  What I need is security, empathy, support and stability.    <br><br><center><i> When you are ready for the next session, type &#39;next&#39; </i></center> ",
-    "needs_if_successul_guess_prompt" : "<br><br>You got it right! Thanks for helping to idenify the needs.   <br><br><center><i> <b>When you are ready for the next session, type &#39;next&#39; <b/></i></center> "
+    "needs_if_successul_guess_prompt" : "<br><br>You got it right! Thanks for helping to idenify the needs.    <br> <br> <br> <p class='moreInfoText'><b> &nbsp;When you are ready for the next session, type &#39;next&#39; </b></p> "
     }
