@@ -1,7 +1,6 @@
 from flask import Flask, redirect, url_for, render_template, request, session
 import logging
-#import jackalbot as jb
-import tac_conductor as tac_conductor
+import jackalbot as jb
 from datetime import datetime, timedelta
 from pathlib import Path
 import pathlib
@@ -47,10 +46,9 @@ def game():
 
 @app.route("/get")
 def get_bot_response():
-    global conversation_history
     user_input = request.args.get('msg')
-    bot_response, conversation_history  = tac_conductor.interact_with_bot(user_input, instructions, client, assistant_id, functions)
-    #session_data['conversation_history'] = conversation_history
+    bot_response, new_game_state_data  = jb.jackalbot_response(user_input, session)
+    session['game_state_data'] = new_game_state_data
     return bot_response
 
 @app.route("/moreinfo", methods=["POST"])
@@ -68,27 +66,18 @@ def logout():
 	session.pop("user", None)
 	return redirect(url_for("login"))
 
-def save_score_to_file(data_to_save, path_to_log):
-    with open(path_to_log, 'w') as file:   #  session['play_log_file_path'] = play_log_file_path
-        file.write(data_to_save)
-        file.write("\n")
-    file.close()    
-    return
 
-conversation_history =[]
+
 if __name__ == "__main__":
     now = datetime.now().strftime("%Y_%m_%d_%H_%M")
     app_directory = pathlib.Path().absolute()
-    app_directory /= "game_play_logs"
-    app_directory.mkdir(parents=True, exist_ok=True)
-    log_filename = f"{now}_log.txt"
-    log_file_path = app_directory / log_filename
-    log_file_path_str = str(log_file_path)
-    save_score_to_file('START SESSION', log_file_path_str)
-    instructions, client, conversation_history, assistant_id, functions = tac_conductor.initialize_bot_interaction()
+    app_directory = os.path.join(str(app_directory), "game_play_logs")
+    log_filename = '%s_log.txt' % now
+    log_file_path = os.path.join(app_directory, log_filename)
+
     logging.basicConfig(
         filename=log_file_path,
         level=logging.INFO,
         format='%(asctime)s.%(msecs)d %(levelname)-8s %(message)s',
         datefmt='%Y-%m-%d %H:%M:%S')
-    app.run(host='127.0.0.1', debug=True, port=8080)  #, debug=True, threaded=True 
+    app.run(host='127.0.0.1', debug=True, port=8080)  #, debug=True, threaded=True   	 

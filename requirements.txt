@@ -6,9 +6,12 @@ google-auth==1.31.0
 requests==2.25.1
 
 # From working environment
-ChatterBot==1.0.0       
-chatterbot-corpus==1.2.0
+#ChatterBot==1.0.0       
+#chatterbot-corpus==1.2.0
 textblob==0.15.3
 path==15.1.2
 pandas
-twilio==6.53.0
+#twilio==6.53.0
+openai
+python-dotenv
+requests
