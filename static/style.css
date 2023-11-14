@@ -49,8 +49,13 @@ h3 {
 #chatbox {
     max-width: 750px;
     margin-top: 30px;
+    text-align: center;
+}
+
+#chatboxleft {
+    max-width: 750px;
+    margin-top: 30px;
     text-align: left;
-    background-color: rgba(43,64,95,1);
 }
 
 #easymodebox {
@@ -59,20 +64,18 @@ h3 {
 }
 
 #logoposition {
-	position: absolute;
-	left: 5px;
-	top: 5px;
-	overflow: visible;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
 #userInput {
     margin-left: auto;
     margin-right: auto;
-    box-align: left;
+    box-align: center;
     text-align: left;
     max-width: 100%;
-    margin-top: 30px;
+    margin-top: 15px;
 }
 
 #textInput {
@@ -82,26 +85,27 @@ h3 {
     border: none;
     border-bottom: 3px solid #a6f5d4;
     font-family: monospace;
-    font-size: 18px;
+    font-size: 14px;
 }
 
 #buttonInput {
     padding: 3px;
     font-family: monospace;
-    font-size: 20px;
+    font-size: 16px;
 }
 
 .userText {
     color: black;
     font-family: Arial, sans-serif;
-    font-size: 16px;
+    font-size: 12px;
     text-align: left;
-    line-height: 25px;
+    line-height: 14px;
+    padding: 3px;
 }
 
 .userText span {
-    background-color: #7bf2c2;
-    padding: 5px;
+    background-color: hsl(0, 0%, 86%);
+    padding: 3px;
     border-radius: 1px;
 }
 
@@ -122,7 +126,7 @@ h3 {
 }
 
 .moreInfoText {
-    color: white;
+    color: rgb(3, 15, 103);
     font-family: Arial, sans-serif;
     font-size: 16px;
     text-align: center;
@@ -131,25 +135,27 @@ h3 {
 }
 
 .smallInfoText {
-    color: white;
+    color: rgb(2, 12, 90);
     font-family: Arial, sans-serif;
     font-size: 12px;
-    text-align: left;
+    text-align: center;
     line-height: 15px;
-    background-color: rgba(73,85,105,1);
 }
 
 .smallInfoButtonText {
-    color: black;
+    color: rgb(0, 0, 0);
     font-family: Arial, sans-serif;
     font-size: 12px;
     text-align: left;
     line-height: 15px;
-
+    border: 1px solid #0c6db8; /* Border color */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 4px #0c6db8; /* Shadow effect for depth */
+    
 }
 
 .introText {
-    color: white;
+    color: rgb(2, 12, 90);
     font-family: Arial, sans-serif;
     font-size: 18px;
     text-align: left;
@@ -163,14 +169,15 @@ h3 {
 .botText {
     color: black;
     font-family: Arial, sans-serif;
-    font-size: 18px;
+    font-size: 12px;
     text-align: right;
-    line-height: 25px;
+    line-height: 14px;
+    padding: 3px;
 }
 
 .botText span {
-    background-color: #f6cbcb;
-    padding: 5px;
+    background-color: rgb(198, 202, 249);;
+    padding: 2px;
     border-radius: 1px;
 }
 
@@ -179,4 +186,30 @@ h3 {
     bottom:0;
     right:0;
     max-width: 600px;
+}
+
+.beveled-button {
+    color: #fff; /* Text color */
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: left;
+
+    padding: 10px 20px; /* Button padding */
+    margin: 5px; /* Space between buttons */
+    text-decoration: none; /* Remove underline from links */
+
+    background-color: #1d94f6; /* Button color */
+    border: 1px solid #0c6db8; /* Border color */
+    border-radius: 5px; /* Rounded corners */
+
+    box-shadow: 0 4px #0c6db8; /* Shadow effect for depth */
+    
+
+    transition: all 0.3s; /* Smooth transition for button press effect */
+}
+
+.beveled-button:active {
+    box-shadow: 0 1px #0c6db8; /* Adjust shadow for pressed effect */
+    transform: translateY(3px); /* Move button down when pressed */
 }

@@ -40,24 +40,31 @@
 	}
 	</style>
   </head>
-<body  style="background-color:rgba(43,64,95,1);">
+<body  style="background-color:rgb(247, 247, 250)">
   <!-- <div><img src="/static/images/jackals.jpg" alt="jaquelbot image" style="width:40px;height:25px;">   -->
     <div>
       <div id="chatbox">
-        <p class="introText"><b>TAC Practice </b><br>
-		<div>
-			<p class="smallInfoButtonText"><span> &nbsp; &nbsp;<a href="/static/tachowto.html"> How To Play </a>&nbsp; &nbsp; &nbsp;  &nbsp;<a href="/static/moreinfo.html"> More Info </a>&nbsp; &nbsp; &nbsp;  &nbsp;
-				<select id='purpose' style="background: #1d94f6;">
-					<option value="0" style="background-color: #1d94f6;">Easy Mode OFF</option>
-					<option value="1" style="background-color: #1d94f6;">Easy Mode ON</option>
-				</select>
-			</span></p>
-		</div>
+        <div  class="introText">
+          <img src="/static/images/mascotAnthony_headshot.png" alt="TrainerAnthony image" style="width:40px;"> 
+          <b>Tactical Advance Communication Trainer</b>
+        </div>
+        
+
+      <div id="chatboxleft">
+        <br>
+        <a href="/static/tachowto.html" class="beveled-button">How To Play</a>
+        <a href="/static/moreinfo.html" class="beveled-button"> More Info </a>
+          <select id='purpose' class="smallInfoButtonText"style="background: #1d94f6;">
+            <option value="0" style="background-color: #1d94f6;">Easy Mode OFF</option>
+            <option value="1" style="background-color: #1d94f6;">Easy Mode ON</option>
+          </select>
+        </span></p>
+      </div>
 
 
-		<p class="smallInfoText"style="text-align:left"> &nbsp; &nbsp;You will be given a phrase, then you will guess the correct need or feeling. <br><b>&nbsp;&nbsp;&nbsp;Some helpful hints:</b><br>  &nbsp;&nbsp;&nbsp;(1) Only guess one need or feeling at a time.<br> &nbsp;&nbsp;&nbsp;(2) Typing  'next' moves you forward to where you can begin the next question. <br>&nbsp;&nbsp;&nbsp;(3) Typing  'clue' gives you a clue for the answer for that question. <br>  &nbsp;&nbsp;&nbsp;(4) Typing  'needs' gives a list of ALL the possible needs.</b><br>  </p> 
 
-			<p class="moreInfoText"style="text-align:left"><b> &nbsp;When you are ready, type "start" </b></p>
+
+			<p class="smallInfoText"style="text-align:left"><b> &nbsp;When you are ready, type "start" </b></p>
       </div>
 
       <div  class="easymodebox">
@@ -67,7 +74,7 @@
       </div>
 
       <div id="userInput">
-        &nbsp; <input id="textInput" type="text" size="30" name="msg" placeholder="You: type here">
+        &nbsp; <input id="textInput" type="text" size="40" name="msg" placeholder="You: type here">
         <input id="buttonInput" type="submit" value="Send">
       </div>
       <script>
