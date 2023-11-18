@@ -1,7 +1,6 @@
 
 Google Cloud Deploy Instructions
 
-Welcome to Clif 3 towls take 3 hours to dry in the sun, how long does it take 9 towles todry itect in this session is set to jacquelbot.
 Use “gcloud config set project [PROJECT_ID]” to change to a different project.
 mikerobertsishappy@cloudshell:~ (jacquelbot)$ git clone https://github.com/MikeRobertsIsHappy/jacquelbot_cloud
 Cloning into 'jacquelbot_cloud'...
