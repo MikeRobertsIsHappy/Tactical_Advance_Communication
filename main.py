@@ -8,7 +8,6 @@ import pathlib
 import os.path
 
 
-
 app = Flask(__name__)
 app.secret_key = "hello"
 app.permanent_session_lifetime = timedelta(minutes=15)
@@ -18,7 +17,7 @@ app.permanent_session_lifetime = timedelta(minutes=15)
 def login():
 	if request.method == "POST":
 		session.permanent = True
-		user = 'bob'
+		user = 'bob'   #	user = request.form["nm"]
 		session["user"] = user
 		session['game_state_data'] = 'starting new session'
 
