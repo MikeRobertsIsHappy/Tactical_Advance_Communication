@@ -29,8 +29,8 @@ def initialize_bot_interaction():
     }
 
     # Load the personality context once from swift_context.txt
-    with open('tac_instructions.txt', 'r') as file:
-        instructions = file.read().strip()
+    with open('tac_instructions.txt', 'r', encoding='utf-8') as file:
+        instructions = file.read()   
 
     return instructions, client, conversation_history, assistant_id, functions
 

@@ -26,7 +26,7 @@ def chat_with_gpt(question, conversation_history, personality):
     """
 
     # Ensure conversation history doesn't exceed the token limit (e.g., 4096 tokens)
-    while sum(len(message['content'].split()) for message in conversation_history) > 4096:
+    while sum(len(message['content'].split()) for message in conversation_history) > 24096:
         conversation_history.pop(0)  # Remove the oldest message
 
     # Create a message with the user's question
@@ -41,7 +41,10 @@ def chat_with_gpt(question, conversation_history, personality):
         messages=[
              {"role": "system", "content": personality},
               *conversation_history,
-            ]
+            ],
+        temperature=0.1,  # Set the temperature for variability
+        max_tokens=2000,  # Maximum length of the response
+        top_p=0.5  # Nucleus sampling for diversity    
     )
 
     # Extract the answer from the response

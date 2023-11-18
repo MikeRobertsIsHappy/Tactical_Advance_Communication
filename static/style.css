@@ -1,6 +1,11 @@
-body {
-    font-family: Arial, sans-serif;
-}
+/* CHANGED FROM   body {font-family: Arial, sans-serif;}*/
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
 
 /* unvisited link */
 a:link {
@@ -47,67 +52,110 @@ h3 {
 }
 
 #chatbox {
-    max-width: 750px;
-    margin-top: 30px;
+    max-width: 600px;
+    width: 100%; /* Make it responsive */
+    margin: 0 auto;
+    text-align: center;
+    flex-grow: 1;
+    overflow-y: auto;
+    padding-bottom: 60px; /* Add space at the bottom equal to the height of the userInput */
+}
+
+#chatboxContainer {
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
     text-align: center;
 }
 
 #chatboxleft {
-    max-width: 750px;
+    max-width: 600px;
+    width: 100%; /* Make it responsive */
+    margin: 0 auto;
     margin-top: 30px;
     text-align: left;
 }
 
 #easymodebox {
-    max-width: 750px;
+    max-width: 600px;
+    width: 100%; /* Make it responsive */
+    margin: 0 auto;
     margin-top: 2px;
 }
 
 #logoposition {
     margin-left: auto;
     margin-right: auto;
+    max-width: 600px;
+    width: 100%; /* Make it responsive */
+    margin: 0 auto;
 }
 
 
-#userInput {
+#StartTrainingInput{
     margin-left: auto;
     margin-right: auto;
     box-align: center;
-    text-align: left;
-    max-width: 100%;
+    text-align: center;
     margin-top: 15px;
+    max-width: 600px;
+    width: 100%; /* Make it responsive */
+    margin: 0 auto;
+    padding: 2px 2px 2px 2px;
 }
+
+#userInputContainer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0; /* Add this */
+    background-color: rgb(247, 247, 250); /* Match the body's background color */
+    padding: 10px 0;
+    box-sizing: border-box; }
+
+#userInput {
+    max-width: 600px;
+    width: 100%; /* Make it responsive */
+    margin: 0 auto;
+    text-align: right;
+    padding: 2px 2px 2px 2px;
+}
+
 
 #textInput {
     max-width: 90%;
-    box-align: left;
+    box-align: right;
     text-align: left;
     border: none;
     border-bottom: 3px solid #a6f5d4;
     font-family: monospace;
     font-size: 14px;
+    padding: 2px 2px 2px 2px;
 }
 
 #buttonInput {
-    padding: 3px;
     font-family: monospace;
-    font-size: 16px;
+    font-size: 14px;
 }
 
-.userText {
+.botText {
     color: black;
     font-family: Arial, sans-serif;
     font-size: 12px;
-    text-align: left;
+    text-align: justify;
     line-height: 14px;
-    padding: 3px;
+    padding: 2px;
 }
 
-.userText span {
+.botText span{
+    display: inline-block; /* or 'block' if you want it to be on its own line */
+    width: 85%; /* set the width to 80% of its parent container */
     background-color: hsl(0, 0%, 86%);
-    padding: 3px;
+    padding: 2px;
     border-radius: 1px;
+    margin-right: 0 auto; /* centers the span if it's a block element */
 }
+
 
 .EasyModeText {
     color: black;
@@ -116,7 +164,7 @@ h3 {
     text-align: left;
     line-height: 16px;
     background-color: #d6ce35;
-    max-width: 750px;
+    max-width: 600px;
     padding: 3px;
 }
 
@@ -137,10 +185,21 @@ h3 {
 .smallInfoText {
     color: rgb(2, 12, 90);
     font-family: Arial, sans-serif;
-    font-size: 12px;
-    text-align: center;
+    font-size: 10px;
+    text-align: left;
     line-height: 15px;
 }
+
+.smallInfoTextLogin {
+    color: rgb(2, 12, 90);
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    text-align: center;
+    line-height: 15px;
+    padding-left: 10px; /* Add padding on the left */
+    padding-right: 10px; /* Add padding on the right */
+}
+
 
 .smallInfoButtonText {
     color: rgb(0, 0, 0);
@@ -157,28 +216,35 @@ h3 {
 .introText {
     color: rgb(2, 12, 90);
     font-family: Arial, sans-serif;
-    font-size: 18px;
+    font-size: 24px;
     text-align: left;
     line-height: 25px;
-    position: absolute;
-    left: 5px;
-    top: 5px;
-    overflow: visible;
-}
+    /* Remove position: absolute and other positioning styles */
+    position: sticky;
+    top: 0;
+    background-color: inherit; /* Or set a specific color */
+    z-index: 10; /* Ensure it's above other content */
+ }
 
-.botText {
+.userText {
     color: black;
     font-family: Arial, sans-serif;
     font-size: 12px;
-    text-align: right;
-    line-height: 14px;
-    padding: 3px;
+    text-align: right ;
+    line-height: 15px;
+    padding: 2px;
 }
 
-.botText span {
-    background-color: rgb(198, 202, 249);;
+
+.userText span {
+    display: inline-block; /* Maintains inline flow but allows for width setting */
+    width: 85%; /* Sets the width to 80% of its parent container */
+    background-color: rgb(198, 202, 249);
     padding: 2px;
     border-radius: 1px;
+    margin-left: auto; /* Pushes the element to the right */
+    margin-right: 0; /* Keeps the element at the right edge */
+    text-align: justify; 
 }
 
 #tidbit {
@@ -192,7 +258,7 @@ h3 {
     color: #fff; /* Text color */
     font-family: Arial, sans-serif;
     font-size: 12px;
-    line-height: 15px;
+    line-height: 14px;
     text-align: left;
 
     padding: 10px 20px; /* Button padding */
@@ -203,7 +269,7 @@ h3 {
     border: 1px solid #0c6db8; /* Border color */
     border-radius: 5px; /* Rounded corners */
 
-    box-shadow: 0 4px #0c6db8; /* Shadow effect for depth */
+    box-shadow: 0 2px #0c6db8; /* Shadow effect for depth */
     
 
     transition: all 0.3s; /* Smooth transition for button press effect */

@@ -18,7 +18,7 @@ app.permanent_session_lifetime = timedelta(minutes=15)
 def login():
 	if request.method == "POST":
 		session.permanent = True
-		user = request.form["nm"]
+		user = 'bob'
 		session["user"] = user
 		session['game_state_data'] = 'starting new session'
 

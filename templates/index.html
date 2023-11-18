@@ -41,65 +41,63 @@
 	</style>
   </head>
 <body  style="background-color:rgb(247, 247, 250)">
-  <!-- <div><img src="/static/images/jackals.jpg" alt="jaquelbot image" style="width:40px;height:25px;">   -->
     <div>
-      <div id="chatbox">
-        <div  class="introText">
-          <img src="/static/images/mascotAnthony_headshot.png" alt="TrainerAnthony image" style="width:40px;"> 
-          <b>Tactical Advance Communication Trainer</b>
-        </div>
-        
-
-      <div id="chatboxleft">
-        <br>
-        <a href="/static/tachowto.html" class="beveled-button">How To Play</a>
-        <a href="/static/moreinfo.html" class="beveled-button"> More Info </a>
-          <select id='purpose' class="smallInfoButtonText"style="background: #1d94f6;">
-            <option value="0" style="background-color: #1d94f6;">Easy Mode OFF</option>
-            <option value="1" style="background-color: #1d94f6;">Easy Mode ON</option>
-          </select>
-        </span></p>
-      </div>
-
-
-
-
-			<p class="smallInfoText"style="text-align:left"><b> &nbsp;When you are ready, type "start" </b></p>
-      </div>
-
-      <div  class="easymodebox">
-          <div class="EasyModeText"style='display:none;' id='business'>
-            Easy Mode Suggestions: Security, Empathy, Support, Stability, Safety, Consideration, Respect, Understanding, Compassion, Freedom, Movement, Choice, Order, Shelter, Care, Peace. <br><b> Only guess one need at a time.</b><br>
+        <div id="chatbox">
+          <div id="chatboxContainer">
+            <div  class="introText">
+              <img src="static\images\mascotAnthony_headshot.png" alt="TrainerAnthony image" style="width:50px;"> 
+              <b>TAC Trainer </b>&nbsp;&nbsp;
+              <a href="/static/tachowto.html" class="beveled-button">How To Play</a>
+              <a href="/static/moreinfo.html" class="beveled-button"> More Info </a>
+              <p class="smallInfoText"> &nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                It takes me serveral seconds to type. Be patient for my response.</p>
+            </div>
           </div>
-      </div>
+        </div>
+        <div id="userInputContainer">
+          <div id="userInput">
+            &nbsp; <input id="textInput" type="text" size="40" name="msg" placeholder="You: type here">
+            <input id="buttonInput" type="submit" value="Send">
+          </div>
+        </div>
 
-      <div id="userInput">
-        &nbsp; <input id="textInput" type="text" size="40" name="msg" placeholder="You: type here">
-        <input id="buttonInput" type="submit" value="Send">
-      </div>
+
       <script>
         function getBotResponse() {
           var rawText = $("#textInput").val();
-          var userHtml = '<p class="userText"><span>' + rawText + '</span></p>';
+          var userHtml = '<p class="userText"><span>' + rawText + '</span><img src="static/images/user_image_icon.png" alt="User" style="width:25px;height:25px; margin-left: 10px;"></p>';
           $("#textInput").val("");
           $("#chatbox").append(userHtml);
-          document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
+          scrollToBottom();
+  
           $.get("/get", { msg: rawText }).done(function(data) {
-            var botHtml = '<p class="botText"><span>' + data + '</span></p>';
+            var botHtml = '<p class="botText"><img src="static/images/mascotAnthony_headshot.png" alt="Chatbot" style="width:30px;height:30px; margin-right: 10px;"><span>' + data + '</span></p>';
             $("#chatbox").append(botHtml);
-            document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
+            scrollToBottom();
           });
+
         }
-        $("#textInput").keypress(function(e) {
-            if ((e.which == 13) && document.getElementById("textInput").value != "" ){
-                getBotResponse();
-            }
-        });
-        $("#buttonInput").click(function() {
-            if (document.getElementById("textInput").value != "") {
-                getBotResponse();
-            }
-        })
+  
+        function scrollToBottom() {
+        // Delay the scroll a bit to ensure the DOM has updated
+          setTimeout(function() {
+          var chatBox = $('#chatbox');
+          chatBox.scrollTop(chatBox.prop("scrollHeight"));
+          }, 100);
+        }
+  
+      $("#textInput").keypress(function(e) {
+          if (e.which == 13 && $("#textInput").val() != "") {
+          getBotResponse();
+         }
+      });
+
+      $("#buttonInput").click(function() {
+        if ($("#textInput").val() != "") {
+        getBotResponse();
+      }
+      });
       </script>
     </div>
   </body>
