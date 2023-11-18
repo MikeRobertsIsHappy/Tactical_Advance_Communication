@@ -62,12 +62,12 @@
         say Here is a list of commands <br>
         say <[5 spaces]> describe : a List of what I can do <br>
         say <[5 spaces]> explain : explains Tactaical Advance Communication <br>
-        say <[5 spaces]> Game1 : General discussion on TAC and NVC <br>
+        say <[5 spaces]> discuss : General discussion on TAC and NVC <br>
+        say <[5 spaces]> Game1 : Guess the feeling or need - type 3 <br>
         say <[5 spaces]> Game2 : Guess the Feeling and Need -type 1 <br>
         say <[5 spaces]> Game3 : Role play with Analysis <br>
         say <[5 spaces]> Game4 : Become a mentor <br>
         say <[5 spaces]> Game5 : Guess the feeling or need - type 2 <br>
-        say <[5 spaces]> Game6 : Guess the feeling or need - type 3 <br>
         say <[5 spaces]> Needs list   <br>
         say <[5 spaces]> Feelings list <br>
         say <[5 spaces]> List of commands - this list <br>
