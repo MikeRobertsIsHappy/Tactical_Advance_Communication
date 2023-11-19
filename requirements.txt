@@ -1,10 +1,9 @@
-Flask==2.0.1
-flask-session==0.4.0
-gunicorn==20.1.0
-google-cloud-datastore==2.1.3
-google-auth==1.31.0
-textblob==0.15.3
-path==15.1.2
+Flask
+flask-session
+gunicorn
+path
 openai
 python-dotenv
 requests
+#google-cloud-datastore==2.1.3
+#google-auth==1.31.0

@@ -2,7 +2,7 @@
 
 ## Information about the bigger project
 
-See 'admin_documents' folder for general information about the project. The Microsoft Word documents can be opend in google docs, if needed. The 'COP-Partnerhip document talks about how you can contribute to this project. the 'admin_planning' folder has planning documents such as new planned features.
+See 'admin_planning' folder for general information about the project. 
 
 
 ## Run Locally
@@ -13,7 +13,7 @@ See 'admin_documents' folder for general information about the project. The Micr
    git clone https://github.com/MikeRobertsIsHappy/Tactical_Advance_Communication.git
    ```
 
-2. Open a sample folder, create a virtualenv, install dependencies, and run the sample:
+2. Open a sample folder, create a virtualenv, install dependencies, and run the sample:pip fre
 
    -----PC based instructions -------
    ```

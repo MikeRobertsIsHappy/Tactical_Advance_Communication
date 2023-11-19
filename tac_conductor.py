@@ -2,7 +2,6 @@ import json
 from openai import OpenAI
 import time
 from tac_chatgpt import chat_with_gpt
-from tac_weather import get_weather, get_local_weather
 import os
 from dotenv import load_dotenv
 import logging
@@ -24,8 +23,7 @@ def initialize_bot_interaction():
 
     # Prepare a dictionary to map function names from the assistant to your Python functions
     functions = {
-        'get_weather': get_weather,
-        'get_local_weather': get_local_weather
+        'get_weather': 'sunny'
     }
 
     # Load the personality context once from swift_context.txt
