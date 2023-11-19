@@ -50,7 +50,7 @@ from the cloud terminal
    
    cd Tactical_Advance_Communication/   #to the directory with the source code
 
-   gcloud app deploy  # to deploy, may take several minutes
+   gcloud app deploy --stop-previous-version  # to deploy, may take several minutes
 
        cloud app logs tail -s default    # (optional)  will stream the logs to the terminal. Useful for debugging
    ```
