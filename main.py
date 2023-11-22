@@ -9,6 +9,7 @@ import os.path
 
 client= None
 assistant_id = None
+instructions = None
 # Load the personality context once from swift_context.txt
 with open('tac_instructions.txt', 'r', encoding='utf-8') as file:
     instructions = file.read()   
@@ -53,7 +54,7 @@ def get_bot_response():
     conversation_history = session.get('conversation_history', [])
     global client
     global assistant_id
-
+    global instructions
     bot_response, new_conversation_history = tac_conductor.interact_with_bot(
         user_input, conversation_history, instructions, client, assistant_id
     	)
