@@ -52,7 +52,7 @@ from the cloud terminal
 
    gcloud app deploy --stop-previous-version  # to deploy, may take several minutes
 
-       cloud app logs tail -s default    # (optional)  will stream the logs to the terminal. Useful for debugging
+       gcloud app logs tail -s default    # (optional)  will stream the logs to the terminal. Useful for debugging
    ```
 3. Your application is now live 
 

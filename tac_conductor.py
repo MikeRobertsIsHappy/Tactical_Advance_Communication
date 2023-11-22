@@ -15,9 +15,6 @@ def initialize_bot_interaction():
     api_key=os.getenv('OPENAI_API_KEY'),
     )
 
-    # Initialize conversation history
-    global conversation_history
-    conversation_history = []
     #os.environ['OPENAI_ASSISTANT_ID'] = "asst_E9cCSvS1FFxAD1jbr6m6JGbw"
     assistant_id = os.getenv('OPENAI_ASSISTANT_ID')
 
@@ -26,14 +23,10 @@ def initialize_bot_interaction():
         'get_weather': 'sunny'
     }
 
-    # Load the personality context once from swift_context.txt
-    with open('tac_instructions.txt', 'r', encoding='utf-8') as file:
-        instructions = file.read()   
-
-    return instructions, client, conversation_history, assistant_id, functions
+    return client, assistant_id
 
 # Function to interact with the chatbot
-def interact_with_bot(user_input, conversation_history, instructions, client, assistant_id, functions):
+def interact_with_bot(user_input, conversation_history, instructions, client, assistant_id):
     thread = client.beta.threads.create()
 
     while True:
