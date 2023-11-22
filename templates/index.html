@@ -44,18 +44,34 @@
     <div>
         <div id="chatbox">
           <div id="chatboxContainer">
-            <div  class="introText">
-              <img src="static\images\mascotAnthony_headshot.png" alt="TrainerAnthony image" style="width:50px;"> 
-              <b>TAC Trainer </b>&nbsp;&nbsp;
-              <a href="/static/tachowto.html" class="beveled-button">How To Play</a>
-              <a href="/static/moreinfo.html" class="beveled-button"> More Info </a>
-              <p class="smallInfoText"> &nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                It takes me serveral seconds to type. Be patient for my response.</p>
+            <div class="introText" style="display: flex; align-items: center;">
+              <div>
+                  <img src="static/images/mascotAnthony_headshot.png" alt="TrainerAnthony image" style="width:50px;"> 
+                  <b>TAC Trainer  &nbsp; &nbsp;</b>
+              </div>
+              <div>
+                  <form action="{{ url_for('logout') }}" method="post">
+                      <input type="submit" value="Logout" class="beveled-button">
+                  </form>
+              </div>
+            </div>
+            <div>
+              <p class="smallInfoText">
+                &nbsp; &nbsp; It takes me MANY seconds to type. Be patient for my response.
+              </p>
             </div>
           </div>
         </div>
+
+
+
         <div id="userInputContainer">
+          <div class="centered-container">
+            <div id="workingIcon" style="display: none;">  
+                <img src="static/images/workingonit.png" alt="Working..." />
+            </div>
+          </div>
+          
           <div id="userInput">
             &nbsp; <input id="textInput" type="text" size="40" name="msg" placeholder="You: type here">
             <input id="buttonInput" type="submit" value="Send">
@@ -63,41 +79,54 @@
         </div>
 
 
-      <script>
-        function getBotResponse() {
-          var rawText = $("#textInput").val();
-          var userHtml = '<p class="userText"><span>' + rawText + '</span><img src="static/images/user_image_icon.png" alt="User" style="width:25px;height:25px; margin-left: 10px;"></p>';
-          $("#textInput").val("");
-          $("#chatbox").append(userHtml);
-          scrollToBottom();
-  
-          $.get("/get", { msg: rawText }).done(function(data) {
-            var botHtml = '<p class="botText"><img src="static/images/mascotAnthony_headshot.png" alt="Chatbot" style="width:30px;height:30px; margin-right: 10px;"><span>' + data + '</span></p>';
-            $("#chatbox").append(botHtml);
-            scrollToBottom();
+        <script>
+          function getBotResponse() {
+              var rawText = $("#textInput").val();
+              var userHtml = '<p class="userText"><span>' + rawText + '</span><img src="static/images/user_image_icon.png" alt="User" style="width:25px;height:25px; margin-left: 10px;"></p>';
+              $("#textInput").val("");
+              $("#chatbox").append(userHtml);
+      
+              // Show the working icon
+              $("#workingIcon").show();
+      
+              $.get("/get", { msg: rawText }).done(function(data) {
+                  var botHtml = '<p class="botText"><img src="static/images/mascotAnthony_headshot.png" alt="Chatbot" style="width:30px;height:30px; margin-right: 10px;"><span>' + data + '</span></p>';
+                  $("#chatbox").append(botHtml);
+      
+                  // Hide the working icon once the response is received
+                  $("#workingIcon").hide();
+              });
+          }
+      
+          function setupMutationObserver() {
+              var chatBox = document.getElementById('chatbox');
+              var observer = new MutationObserver(function(mutations) {
+                  mutations.forEach(function(mutation) {
+                      if (mutation.addedNodes.length > 0) {
+                          chatBox.scrollTop = chatBox.scrollHeight;
+                      }
+                  });
+              });
+      
+              var config = { childList: true };
+              observer.observe(chatBox, config);
+          }
+      
+          $(document).ready(function() {
+              setupMutationObserver();
           });
-
-        }
-  
-        function scrollToBottom() {
-        // Delay the scroll a bit to ensure the DOM has updated
-          setTimeout(function() {
-          var chatBox = $('#chatbox');
-          chatBox.scrollTop(chatBox.prop("scrollHeight"));
-          }, 100);
-        }
-  
-      $("#textInput").keypress(function(e) {
-          if (e.which == 13 && $("#textInput").val() != "") {
-          getBotResponse();
-         }
-      });
-
-      $("#buttonInput").click(function() {
-        if ($("#textInput").val() != "") {
-        getBotResponse();
-      }
-      });
+      
+          $("#textInput").keypress(function(e) {
+              if (e.which == 13 && $("#textInput").val() != "") {
+                  getBotResponse();
+              }
+          });
+      
+          $("#buttonInput").click(function() {
+              if ($("#textInput").val() != "") {
+                  getBotResponse();
+              }
+          });
       </script>
     </div>
   </body>

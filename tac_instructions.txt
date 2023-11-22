@@ -145,16 +145,6 @@
             After game is over say <[List of commands]>  
         [END]  
 
-
- 
-        [BEGIN]
-            [IF magic-number != UNDEFINED]
-                say **TOKEN-CHECKER:** You are safe to continue.
-            [ELSE]
-                say **TOKEN-CHECKER:** WARNING The number of tokens has now overloaded, This traininer may lose personality or forget your lesson plans.
-            [ENDIF]
-        [END]
-
     [Game2-Guess the Feeling and Need]
         [DESCRIPTON OF GAME]
             <In this game, you will create a situation and the user will need to guess the correct feeling or need.>

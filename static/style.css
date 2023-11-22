@@ -59,6 +59,8 @@ h3 {
     flex-grow: 1;
     overflow-y: auto;
     padding-bottom: 60px; /* Add space at the bottom equal to the height of the userInput */
+    border-left: 1px solid #1d94f6; /* Thin blue line on the left */
+    border-right: 1px solid #1d94f6; /* Thin blue line on the right */
 }
 
 #chatboxContainer {
@@ -258,11 +260,9 @@ h3 {
     color: #fff; /* Text color */
     font-family: Arial, sans-serif;
     font-size: 12px;
-    line-height: 14px;
-    text-align: left;
-
-    padding: 10px 20px; /* Button padding */
-    margin: 5px; /* Space between buttons */
+    line-height: 20px;
+    text-align: center;
+    height: 20px; /* Example height */
     text-decoration: none; /* Remove underline from links */
 
     background-color: #1d94f6; /* Button color */
@@ -279,3 +279,10 @@ h3 {
     box-shadow: 0 1px #0c6db8; /* Adjust shadow for pressed effect */
     transform: translateY(3px); /* Move button down when pressed */
 }
+
+.centered-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*height: 100vh; /* This makes the container take the full height of the viewport */
+    }

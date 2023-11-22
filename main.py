@@ -17,9 +17,11 @@ app.permanent_session_lifetime = timedelta(minutes=15)
 def login():
 	if request.method == "POST":
 		session.permanent = True
-		user = 'bob'   #	user = request.form["nm"]
+		user = request.form.get("username")  # Retrieve username from form input
+		if not user: return "No username provided", 400  # Or render an error message on the login page
 		session["user"] = user
 		session['game_state_data'] = 'starting new session'
+		session['conversation_history'] = []  # Initialize conversation_history in the session
 
 		# define log name and save to session cookie
 		now = datetime.now().strftime("%Y_%m_%d_%H_%M")
@@ -46,10 +48,16 @@ def game():
 
 @app.route("/get")
 def get_bot_response():
-    global conversation_history
     user_input = request.args.get('msg')
-    bot_response, conversation_history  = tac_conductor.interact_with_bot(user_input, instructions, client, assistant_id, functions)
-    #session_data['conversation_history'] = conversation_history
+	# Retrieve the current conversation history from the session
+    conversation_history = session.get('conversation_history', [])
+
+    bot_response, new_conversation_history = tac_conductor.interact_with_bot(
+        user_input, conversation_history, instructions, client, assistant_id, functions
+    	)
+
+    # Update the conversation history in the session
+    session['conversation_history'] = new_conversation_history
     return bot_response
 
 @app.route("/moreinfo", methods=["POST"])
@@ -61,11 +69,11 @@ def moreinfo():
 	else:
 		return render_template("moreinfo.html")
 
-
-@app.route("/logout")
+@app.route("/logout", methods=["GET", "POST"])
 def logout():
-	session.pop("user", None)
-	return redirect(url_for("login"))
+    session.pop("user", None)
+    session.pop("conversation_history", None)  # Clear conversation history
+    return redirect(url_for("login"))
 
 def save_score_to_file(data_to_save, path_to_log):
     with open(path_to_log, 'w') as file:   #  session['play_log_file_path'] = play_log_file_path
@@ -74,7 +82,7 @@ def save_score_to_file(data_to_save, path_to_log):
     file.close()    
     return
 
-conversation_history =[]
+
 if __name__ == "__main__":
     now = datetime.now().strftime("%Y_%m_%d_%H_%M")
     app_directory = pathlib.Path().absolute()

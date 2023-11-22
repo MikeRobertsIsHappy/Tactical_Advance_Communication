@@ -33,8 +33,7 @@ def initialize_bot_interaction():
     return instructions, client, conversation_history, assistant_id, functions
 
 # Function to interact with the chatbot
-def interact_with_bot(user_input, instructions, client, assistant_id, functions):
-    global conversation_history
+def interact_with_bot(user_input, conversation_history, instructions, client, assistant_id, functions):
     thread = client.beta.threads.create()
 
     while True:
