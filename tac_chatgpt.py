@@ -38,6 +38,7 @@ def chat_with_gpt(question, conversation_history, personality):
     # Use OpenAI to get an answer
     response = client.chat.completions.create(
         model="gpt-4-1106-preview",
+        seed=1000, #set a seed for consisten results
         messages=[
              {"role": "system", "content": personality},
               *conversation_history,
