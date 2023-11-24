@@ -7,27 +7,6 @@ body, html {
   }
 
 
-/* unvisited link */
-a:link {
-    color: rgb(243, 221, 53);
-  }
-  
-  /* visited link */
-  a:visited {
-    color: white;
-  }
-  
-  /* mouse over link */
-  a:hover {
-    color: hotpink;
-  }
-  
-  /* selected link */
-  a:active {
-    color: white;
-  }
-
-
 h1 {
     color: white;
     margin-bottom: 0;
@@ -54,13 +33,16 @@ h3 {
 #chatbox {
     max-width: 600px;
     width: 100%; /* Make it responsive */
+    max-height: calc(100vh - 50px); /* Adjust 70px to the combined height of the header and #userInputContainer */    
     margin: 0 auto;
     text-align: center;
     flex-grow: 1;
-    overflow-y: auto;
-    padding-bottom: 60px; /* Add space at the bottom equal to the height of the userInput */
+    overflow-y: scroll;
     border-left: 1px solid #1d94f6; /* Thin blue line on the left */
     border-right: 1px solid #1d94f6; /* Thin blue line on the right */
+    padding-bottom: 50px; /* Increased to 70px to provide more space for #userInputContainer */
+    z-index: 1; /* Lower z-index than #userInputContainer */
+
 }
 
 #chatboxContainer {
@@ -113,7 +95,9 @@ h3 {
     right: 0; /* Add this */
     background-color: rgb(247, 247, 250); /* Match the body's background color */
     padding: 10px 0;
-    box-sizing: border-box; }
+    box-sizing: border-box; 
+    z-index: 2; /* Higher z-index to ensure it's above #chatbox */
+}
 
 #userInput {
     max-width: 600px;
@@ -260,9 +244,9 @@ h3 {
     color: #fff; /* Text color */
     font-family: Arial, sans-serif;
     font-size: 12px;
-    line-height: 20px;
+    line-height: 40px;
     text-align: center;
-    height: 20px; /* Example height */
+    height: 40px; /* Example height */
     text-decoration: none; /* Remove underline from links */
 
     background-color: #1d94f6; /* Button color */
@@ -286,3 +270,13 @@ h3 {
     align-items: center;
     /*height: 100vh; /* This makes the container take the full height of the viewport */
     }
+
+#workingIcon {
+    display: none;
+    position: fixed; /* Or absolute, depending on your layout */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust to center the div precisely */
+    z-index: 1000; /* High z-index to float above other elements */
+    /* Add more styling as needed (e.g., background color, padding, etc.) */
+}    

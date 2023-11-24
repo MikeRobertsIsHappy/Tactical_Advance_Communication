@@ -7,7 +7,6 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="/static/style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -41,6 +40,9 @@
 	</style>
   </head>
 <body  style="background-color:rgb(247, 247, 250)">
+    <div id="workingIcon" style="display: none;">  
+        <img src="static/images/chewing_thinking.gif" alt="Working..." />
+    </div>
     <div>
         <div id="chatbox">
           <div id="chatboxContainer">
@@ -57,21 +59,13 @@
             </div>
             <div>
               <p class="smallInfoText">
-                &nbsp; &nbsp; It takes me MANY seconds to type. Be patient for my response.
+                &nbsp; &nbsp;<b> It takes me MANY seconds to type. Be patient for my response.</b>
               </p>
             </div>
           </div>
         </div>
 
-
-
         <div id="userInputContainer">
-          <div class="centered-container">
-            <div id="workingIcon" style="display: none;">  
-                <img src="static/images/chewing_thinking.gif" alt="Working..." />
-            </div>
-          </div>
-          
           <div id="userInput">
             &nbsp; <input id="textInput" type="text" size="40" name="msg" placeholder="You: type here">
             <input id="buttonInput" type="submit" value="Send">
