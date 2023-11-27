@@ -91,4 +91,4 @@ if __name__ == "__main__":
         level=logging.INFO,
         format='%(asctime)s.%(msecs)d %(levelname)-8s %(message)s',
         datefmt='%Y-%m-%d %H:%M:%S')
-    app.run(host='127.0.0.1', debug=True, port=8080)  #, debug=True, threaded=True 
+    app.run(host='127.0.0.1', debug=False, port=8080)  #, debug=True,
