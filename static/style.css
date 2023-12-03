@@ -112,8 +112,8 @@ h3 {
     max-width: 90%;
     box-align: right;
     text-align: left;
-    border: none;
-    border-bottom: 3px solid #a6f5d4;
+    border: 2px solid rgb(198, 202, 249);e;
+    border-bottom: 4px solid rgb(198, 202, 249);
     font-family: monospace;
     font-size: 14px;
     padding: 2px 2px 2px 2px;
